@@ -13,6 +13,3 @@ export default {
   components: { login: Login, "side-view": SideView }
 };
 </script>
-
-<style>
-</style>

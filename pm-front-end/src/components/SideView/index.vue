@@ -11,6 +11,3 @@ export default {
   components: { "side-view": SideView }
 };
 </script>
-
-<style>
-</style>
