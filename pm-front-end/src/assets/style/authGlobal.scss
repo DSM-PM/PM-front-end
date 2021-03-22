@@ -1,0 +1,64 @@
+$color: #f5df4d;
+$gray: #939597;
+$font: "AppleSDGothicNeo";
+$titleFont: "Impact";
+
+.auth-container {
+  display: flex;
+}
+
+.input-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h1 {
+    font-family: $titleFont;
+    font-size: 6rem;
+    display: flex;
+    align-items: baseline;
+    color: $color;
+    p {
+      color: $gray;
+      font-family: $titleFont;
+      font-size: 2rem;
+      margin: 0 0.2rem 0 0.4rem;
+    }
+  }
+
+  .description-text {
+    color: #535353;
+    opacity: 0.68;
+    margin-top: 1rem;
+  }
+
+  form {
+    margin: 5rem 0 1.2rem 0;
+    p {
+      color: #535353;
+      font-size: 0.7rem;
+      text-align: left;
+      margin: 1.3rem 0 0.4rem 0;
+    }
+    input {
+      width: 100%;
+      border: 1px solid #c1c1c1;
+      border-radius: 1rem;
+      height: 2.6rem;
+      padding: 1.3rem;
+      outline: none;
+    }
+  }
+
+  button {
+    box-shadow: 0px 3px 6px #00000016;
+    background-color: $color;
+    width: 100%;
+    border-radius: 2rem;
+    border: none;
+    height: 2.5rem;
+    color: white;
+    font-size: 1.15rem;
+  }
+}
