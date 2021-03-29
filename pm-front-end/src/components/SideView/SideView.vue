@@ -22,7 +22,7 @@ $color: #f5df4d;
   display: flex;
   justify-content: center;
   img {
-    width: 45rem;
+    width: 95%;
   }
 }
 </style>
