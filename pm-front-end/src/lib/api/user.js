@@ -5,7 +5,6 @@ export const login = (userId, password) => {
   return client
     .post("/user/auth", { userId, password })
     .then(({ data }) => data)
-    .catch((err) => console.log(err));
 };
 
 export const setAuthInHeader = (accessToken) => {
@@ -16,5 +15,4 @@ export const signUp = (userId, password) => {
   return client
     .post("/user/register", { userId, password })
     .then(({ data }) => data)
-    .catch((err) => console.log(err));
 };

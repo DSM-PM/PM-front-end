@@ -15,12 +15,14 @@
         <input type="password" v-model="password" @keyup.enter="onSignUp" />
       </form>
       <button @click="onSignUp">회원가입</button>
+      <router-link to="/" class="link">이미 계정이 있으신가요?</router-link>
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { SuccessToast, ErrorToast, WarningToast } from "../../lib/toast";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   data() {
@@ -29,18 +31,21 @@ export default {
       password: ""
     };
   },
+  computed: {
+    ...mapGetters(["isSignUp"])
+  },
   methods: {
     ...mapActions(["SIGN_UP"]),
     onSignUp() {
       this.id === "" && this.password === ""
-        ? alert("아이디와 패스워드를 입력해주세요.")
+        ? WarningToast("아이디와 비밀번호를 입력하세요.")
         : this.SIGN_UP({ userId: this.userId, password: this.password })
             .then(() => {
-              alert("굳");
+              this.isSignUp.length !== 0
+                ? ErrorToast("이미 가입되어 있는 계정입니다.")
+                : SuccessToast("PM의 유저가 되신 것을 환영합니다!");
+              this.$router.push("/");
             })
-            .catch(err => {
-              console.log(err);
-            });
     }
   }
 };

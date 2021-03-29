@@ -15,11 +15,13 @@
         <input type="password" v-model="password" @keyup.enter="onLogin" />
       </form>
       <button @click="onLogin">로그인</button>
+      <router-link to="/sign-up" class="link">아직 계정이 없으신가요?</router-link>
     </div>
   </div>
 </template>
 
 <script>
+import { SuccessToast, ErrorToast, WarningToast } from "../../lib/toast";
 import { mapActions, mapGetters } from "vuex";
 
 export default {
@@ -36,12 +38,15 @@ export default {
     ...mapActions(["LOGIN"]),
     onLogin() {
       this.userId === "" && this.password === ""
-        ? alert("아이디와 패스워드를 입력해주세요.")
-        : this.LOGIN({ userId: this.userId, password: this.password }).then(
-            () => {
-              if (this.isAuth === true) this.$router.push("/home");
-            }
-          );
+        ? WarningToast("아이디와 비밀번호를 입력하세요.")
+        : this.LOGIN({ userId: this.userId, password: this.password })
+            .then(() => {
+              if (this.isAuth === true) {
+                SuccessToast("환영합니다");
+                this.$router.push("/home");
+              } else ErrorToast("로그인 실패. 다시 시도하세요.");
+            })
+            .catch(() => ErrorToast("로그인 실패. 다시 시도하세요."));
     }
   }
 };

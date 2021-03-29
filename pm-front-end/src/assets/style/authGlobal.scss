@@ -60,5 +60,13 @@ $titleFont: "Impact";
     height: 2.5rem;
     color: white;
     font-size: 1.15rem;
+    margin-bottom: 1rem;
+  }
+
+  .link {
+    text-decoration: none;
+    color: $gray;
+    font-size: 0.85rem;
+    float: right;
   }
 }

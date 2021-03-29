@@ -8,4 +8,7 @@ export default {
     localStorage.setItem("accessToken", accessToken);
     setAuthInHeader(accessToken);
   },
+  SIGN_UP(state, data) {
+    state.userStatus = data;
+  },
 };
