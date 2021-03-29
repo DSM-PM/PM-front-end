@@ -4,7 +4,7 @@ export default {
   LOGIN(state, data) {
     const accessToken = data.accessToken;
     if (!accessToken) return;
-    state.accessToken = accessToken;
+    else state.accessToken = true;
     localStorage.setItem("accessToken", accessToken);
     setAuthInHeader(accessToken);
   },

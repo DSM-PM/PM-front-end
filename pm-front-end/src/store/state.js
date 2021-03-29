@@ -1,5 +1,5 @@
 const state = {
-  accessToken: null,
+  accessToken: false,
 };
 
 export default state;

@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   data() {
@@ -29,13 +29,19 @@ export default {
       password: ""
     };
   },
+  computed: {
+    ...mapGetters(["isAuth"])
+  },
   methods: {
     ...mapActions(["LOGIN"]),
     onLogin() {
-      console.log(this.userId, this.password);
       this.userId === "" && this.password === ""
         ? alert("아이디와 패스워드를 입력해주세요.")
-        : this.LOGIN({ userId: this.userId, password: this.password });
+        : this.LOGIN({ userId: this.userId, password: this.password }).then(
+            () => {
+              if (this.isAuth === true) this.$router.push("/home");
+            }
+          );
     }
   }
 };
