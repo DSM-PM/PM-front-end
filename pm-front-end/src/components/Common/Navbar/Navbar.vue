@@ -21,7 +21,9 @@ export default {
   },
   methods: {
     onNavLink(i) {
-      console.log(i);
+      if (i === 3) {
+        localStorage.removeItem("accessToken");
+      }
       this.$router.push(this.iconList[i].link);
     }
   }
