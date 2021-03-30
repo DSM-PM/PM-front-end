@@ -1,11 +1,13 @@
 <template>
   <header>
     <div>
-      <h1>
-        P
-        <p>roject</p>M
-        <p>anegment</p>
-      </h1>
+      <router-link to="/home" class="header-link">
+        <h1>
+          P
+          <p>roject</p>M
+          <p>anegment</p>
+        </h1>
+      </router-link>
     </div>
   </header>
 </template>
@@ -24,6 +26,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .header-link {
+    text-decoration: none;
+  }
 
   h1 {
     font-family: $titleFont;
