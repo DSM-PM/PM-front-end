@@ -33,15 +33,18 @@ $yellow: #fff5b4;
   border: 8px solid $yellow;
   box-shadow: 1px 20px 50px #00000013;
 }
-.board-item a {
-  text-decoration: none;
+.board-item button {
+  border: none;
   display: block;
   width: 100%;
   height: 100%;
   border-radius: 0.5rem;
+  cursor: pointer;
+  outline: none;
+  background: inherit;
 }
-.board-item a:hover,
-.board-item a:focus {
+.board-item button:hover,
+.board-item button:focus {
   transition: 0.3s;
   background-color: rgba(0, 0, 0, 0.1);
   color: #666;
