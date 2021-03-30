@@ -1,11 +1,10 @@
 import Vue from "vue";
 import Router from "vue-router";
-import store from "../store";
 import { Login, SignUp, Layout, Home, Kanban, Issue } from "@/components";
 Vue.use(Router);
 
 const requireAuth = () => (from, to, next) => {
-  if (store.state.accessToken) next();
+  if (localStorage.getItem("accessToken")) next();
   else {
     alert("로그인하세요");
     next("/");
