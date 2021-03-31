@@ -37,7 +37,7 @@ export default new Router({
         },
         {
           name: "Kanban",
-          path: "/kanban",
+          path: "/kanban/:id",
           component: Kanban,
         },
         {

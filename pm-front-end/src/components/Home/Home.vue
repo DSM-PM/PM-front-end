@@ -19,9 +19,10 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import { BoardItem } from "./";
 import InputModal from "../Common/Modal/InputModal";
-import { WarningToast } from "../../lib/toast";
+import { WarningToast, ErrorToast } from "../../lib/toast";
 export default {
   name: "Home",
   components: { "board-item": BoardItem, "input-modal": InputModal },
@@ -32,6 +33,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["CREATE_BOARD"]),
     openModal() {
       this.modal = true;
     },
@@ -40,9 +42,13 @@ export default {
     },
     onSendBoardName() {
       if (this.boardName.length > 0) {
-        console.log(this.boardName);
-        this.boardName = "";
-        this.closeModal();
+        this.CREATE_BOARD({ title: this.boardName })
+          .then(id => {
+            this.$router.push(`/kanban/${id}`);
+            this.boardName = "";
+            this.closeModal();
+          })
+          .catch(() => ErrorToast("다시 시도하세요."));
       } else {
         WarningToast("보드 이름을 입력하세요.");
       }
