@@ -1,9 +1,13 @@
 <template>
   <div class="board-item">
-    <div class="board-item-title">Board Name</div>
+    <router-link :to="`/kanban/${boardList.id}`" class="none-link">
+      <div class="board-item-title">{{boardList.title}}</div>
+    </router-link>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["boardList"],
+};
 </script>

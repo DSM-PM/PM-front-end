@@ -1,7 +1,7 @@
 <template>
   <header>
     <div>
-      <router-link to="/home" class="header-link">
+      <router-link to="/home" class="none-link">
         <h1>
           P
           <p>roject</p>M
@@ -16,7 +16,7 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $yellow: #f5df4d;
 $gray: #939597;
 $font: "AppleSDGothicNeo";
@@ -26,10 +26,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  .header-link {
-    text-decoration: none;
-  }
 
   h1 {
     font-family: $titleFont;
@@ -44,5 +40,9 @@ header {
       margin: 0 0.2rem 0 0.4rem;
     }
   }
+}
+
+.none-link {
+  text-decoration: none;
 }
 </style>

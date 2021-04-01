@@ -32,6 +32,10 @@ $yellow: #fff5b4;
   border-radius: 1rem;
   border: 8px solid $yellow;
   box-shadow: 1px 20px 50px #00000013;
+  &:hover {
+    border: 8px solid #ffed79;
+    transition: 0.3s;
+  }
 }
 .board-item button {
   border: none;
