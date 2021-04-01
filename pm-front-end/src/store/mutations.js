@@ -11,4 +11,7 @@ export default {
   SIGN_UP(state, data) {
     state.userStatus = data;
   },
+  SET_BOARD_LIST(state, { list }) {
+    state.boardList = list.map((board) => board);
+  },
 };
