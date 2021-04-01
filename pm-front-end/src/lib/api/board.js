@@ -1,5 +1,9 @@
-import { client } from "./client";
+import { getClientAccessToken } from "./client";
 
 export const createBoard = (title) => {
-  return client.post("/board", { title }).then(({ data }) => data);
+  return getClientAccessToken().post("/board", { title }).then(({ data }) => data);
+};
+
+export const getBoardList = () => {
+  return getClientAccessToken().get("/board").then(({ data }) => data);
 };
