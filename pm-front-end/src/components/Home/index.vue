@@ -24,6 +24,8 @@ $yellow: #fff5b4;
   flex-wrap: wrap;
 }
 .board-item {
+  position: relative;
+  display: flex;
   height: 7rem;
   width: 23%;
   margin: 0 2% 1.2rem 0;
@@ -36,8 +38,24 @@ $yellow: #fff5b4;
     border: 8px solid #ffed79;
     transition: 0.3s;
   }
+
+  &-button {
+    position: absolute;
+    top: -12%;
+    right: -3%;
+    border: none;
+    padding: 0.4rem 0.7rem;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      background-color: rgb(247, 100, 100);
+      color: white;
+      transition: 0.3s;
+    }
+  }
 }
-.board-item button {
+.new-board-btn {
   border: none;
   display: block;
   width: 100%;
@@ -47,8 +65,8 @@ $yellow: #fff5b4;
   outline: none;
   background: inherit;
 }
-.board-item button:hover,
-.board-item button:focus {
+.new-board-btn:hover,
+.new-board-btn:focus {
   transition: 0.3s;
   background-color: rgba(0, 0, 0, 0.1);
   color: #666;
