@@ -1,5 +1,6 @@
 import { login, signUp } from "../lib/api/user";
 import { createBoard, getBoardList } from "../lib/api/board";
+import { createProject, getProjectList } from "../lib/api/project";
 
 export default {
   LOGIN({ commit }, { userId, password }) {
@@ -18,5 +19,11 @@ export default {
   },
   GET_BOARD_LIST({ commit }) {
     return getBoardList().then((data) => commit("SET_BOARD_LIST", data));
+  },
+  CREATE_PROJECT(_, { title }) {
+    return createProject(title).then(({ item }) => item.id);
+  },
+  GET_PROJECT_LIST({ commit }) {
+    return getProjectList().then((data) => commit("SET_PROJECT_LIST", data));
   },
 };

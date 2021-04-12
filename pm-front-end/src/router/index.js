@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import { Login, SignUp, Layout, Home, Kanban, Issue } from "@/components";
+import { Login, SignUp, Layout, Home, Kanban, Issue, Project } from "@/components";
 Vue.use(Router);
 
 const requireAuth = () => (from, to, next) => {
@@ -39,6 +39,11 @@ export default new Router({
           name: "Kanban",
           path: "/kanban/:id",
           component: Kanban,
+        },
+        {
+          name: "Project",
+          path: "/project",
+          component: Project,
         },
         {
           name: "Issue",

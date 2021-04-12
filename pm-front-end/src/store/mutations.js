@@ -14,4 +14,7 @@ export default {
   SET_BOARD_LIST(state, { list }) {
     state.boardList = list.map((board) => board);
   },
+  SET_PROJECT_LIST(state, { list }) {
+    state.projectList = list.map((project) => project);
+  },
 };
