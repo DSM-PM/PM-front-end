@@ -1,13 +1,23 @@
 <template>
   <div class="board-list">
-    <board-item v-for="(p) in projectList" :key="p.id" @click="onProject(p.id)" :boardList="p" />
+    <board-item
+      v-for="(p) in projectList"
+      :key="p.id"
+      @click="onProject(p.id)"
+      :boardList="p"
+      :path="$route.path"
+    />
     <div class="board-item">
       <button class="new-board-btn" href @click="openModal">Create new project...</button>
     </div>
-    <h1 @click="a" class="delete">삭제</h1>
     <input-modal @close="closeModal" v-if="modal">
       <h1>CREATE PROJECT</h1>
-      <input v-model="projectName" placeholder="project name..." class="modal-input" />
+      <input
+        v-model="projectName"
+        placeholder="project name..."
+        class="modal-input"
+        @keyup.enter="onSendBoardName"
+      />
       <template slot="footer">
         <button @click="onSendProjectName" class="modal-button">추가</button>
       </template>

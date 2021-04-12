@@ -1,12 +1,23 @@
 <template>
   <div class="board-list">
-    <board-item v-for="(b) in boardList" :key="b.id" @click="onBoard(b.id)" :boardList="b" />
+    <board-item
+      v-for="(b) in boardList"
+      :key="b.id"
+      @click="onBoard(b.id)"
+      :boardList="b"
+      :path="$route.path"
+    />
     <div class="board-item">
       <button class="new-board-btn" href @click="openModal">Create new board...</button>
     </div>
     <input-modal @close="closeModal" v-if="modal">
       <h1>CREATE BOARD</h1>
-      <input v-model="boardName" placeholder="board name..." class="modal-input" />
+      <input
+        v-model="boardName"
+        placeholder="board name..."
+        class="modal-input"
+        @keyup.enter="onSendBoardName"
+      />
       <template slot="footer">
         <button @click="onSendBoardName" class="modal-button">추가</button>
       </template>
@@ -18,7 +29,7 @@
 import { mapActions, mapState } from "vuex";
 import { BoardItem } from "./";
 import InputModal from "../Common/Modal/InputModal";
-import { WarningToast, ErrorToast, SuccessToast } from "../../lib/toast";
+import { WarningToast, ErrorToast, SuccessToast } from "@/lib/toast";
 export default {
   name: "Home",
   components: { "board-item": BoardItem, "input-modal": InputModal },
@@ -65,11 +76,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-h1 {
-  color: #939597;
-  font-size: 1.4rem;
-}
+<style lang="scss">
 .modal-input {
   margin: 1rem 0;
   width: 100%;
