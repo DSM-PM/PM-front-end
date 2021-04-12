@@ -6,3 +6,4 @@ export { default as Navbar } from "./Common/Navbar";
 export { default as Layout } from "./Layout";
 export { default as Issue } from "./Issue/index.vue";
 export { default as Kanban } from "./Kanban/index.vue";
+export { default as Project } from "./Project/index.vue";

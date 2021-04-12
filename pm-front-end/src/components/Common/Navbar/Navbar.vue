@@ -13,7 +13,7 @@ export default {
     return {
       iconList: [
         { img: kanban, link: "/home" },
-        { img: issue, link: "/issue" },
+        { img: issue, link: "/project" },
         { img: plus, link: "/d" },
         { img: logout, link: "/" }
       ]
