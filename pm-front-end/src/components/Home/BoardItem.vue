@@ -1,6 +1,9 @@
 <template>
   <div class="board-item">
-    <router-link :to="`/kanban/${boardList.id}`" class="none-link">
+    <router-link
+      :to="link ? `/kanban/${boardList.id}` : `/issue/${boardList.id}`"
+      class="none-link"
+    >
       <div class="board-item-title">{{boardList.title}}</div>
     </router-link>
     <button class="board-item-button" @click="onDeleteBoard">X</button>
@@ -13,6 +16,14 @@ import { confirmAlert } from "@/lib/sweetAlert";
 import { ErrorToast, SuccessToast } from "../../lib/toast";
 export default {
   props: ["boardList", "path"],
+  data() {
+    return {
+      link: true
+    };
+  },
+  created() {
+    this.path === "/home" ? (this.link = true) : (this.link = false);
+  },
   methods: {
     ...mapActions(["DELETE_BOARD", "DELETE_PROJECT"]),
     onDeleteBoard() {
