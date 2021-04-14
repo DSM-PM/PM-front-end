@@ -1,9 +1,14 @@
 <template>
-  <div></div>
+  <div>
+    <kanban />
+  </div>
 </template>
 
 <script>
-export default {};
+import { Kanban } from "./";
+export default {
+  components: { kanban: Kanban }
+};
 </script>
 
 <style>

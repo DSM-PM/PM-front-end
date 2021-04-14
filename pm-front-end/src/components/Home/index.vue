@@ -1,5 +1,6 @@
 <template>
   <div class="home-container">
+    <h1 class="home-container-title">Boards</h1>
     <home />
   </div>
 </template>
@@ -16,6 +17,10 @@ export default {
 $yellow: #fff5b4;
 .home-container {
   width: 100%;
+  &-title {
+    margin-left : 1.3rem;
+    font-size: 1.3rem;
+  }
 }
 
 .board-list {
