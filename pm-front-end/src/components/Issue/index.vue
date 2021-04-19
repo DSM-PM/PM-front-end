@@ -1,9 +1,14 @@
 <template>
-  <div></div>
+  <div>
+    <issue />
+  </div>
 </template>
 
 <script>
-export default {};
+import { Issue } from "./";
+export default {
+  components: { issue: Issue }
+};
 </script>
 
 <style>
