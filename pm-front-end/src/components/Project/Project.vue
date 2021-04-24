@@ -30,7 +30,6 @@ import { mapActions, mapState } from "vuex";
 import { BoardItem } from "../Home";
 import InputModal from "../Common/Modal/InputModal";
 import { WarningToast, ErrorToast, SuccessToast } from "@/lib/toast";
-import { confirmAlert } from "@/lib/sweetAlert";
 export default {
   name: "Project",
   components: { "board-item": BoardItem, "input-modal": InputModal },
@@ -73,11 +72,6 @@ export default {
     onProject(id) {
       this.$router.push(`/issue/${id}`);
     },
-    a() {
-      confirmAlert("해당 프로젝트를 삭제하시겠습니까?", "warning", () =>
-        console.log("삭제")
-      );
-    }
   }
 };
 </script>
