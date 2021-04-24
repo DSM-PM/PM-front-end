@@ -1,6 +1,7 @@
 import { login, signUp } from "../lib/api/user";
 import { createBoard, getBoardList, deleteBoard } from "../lib/api/board";
 import { createProject, getProjectList, deleteProject } from "../lib/api/project";
+import { createIssue, getIssue } from "../lib/api/issue";
 
 export default {
   LOGIN({ commit }, { userId, password }) {
@@ -30,5 +31,11 @@ export default {
   },
   DELETE_PROJECT(_, id) {
     return deleteProject(id);
+  },
+  CREATE_ISSUE(_, { board_id, category, title }) {
+    return createIssue(board_id, category, title).then(({ item }) => item.id);
+  },
+  GET_ISSUE({ commit }, { id }) {
+    return getIssue(id).then((data) => commit("SET_ISSUE_LIST", data));
   },
 };

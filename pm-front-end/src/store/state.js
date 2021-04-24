@@ -3,6 +3,7 @@ const state = {
   userStateus: "",
   boardList: [],
   projectList: [],
+  issueList: [],
 };
 
 export default state;

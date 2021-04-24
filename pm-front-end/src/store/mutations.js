@@ -17,4 +17,7 @@ export default {
   SET_PROJECT_LIST(state, { list }) {
     state.projectList = list.map((project) => project);
   },
+  SET_ISSUE_LIST(state, { issueList }) {
+    state.issueList = issueList.map((issueList) => issueList);
+  },
 };
