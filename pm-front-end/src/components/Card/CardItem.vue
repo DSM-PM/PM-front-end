@@ -1,12 +1,12 @@
 <template>
-  <div class="card">
+  <div class="card" v-if="category">
     <p>{{issueList.content}}</p>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["issueList"]
+  props: ["issueList", "category"],
 };
 </script>
 
@@ -20,6 +20,7 @@ export default {
   border-radius: 0.6rem;
   box-shadow: 1px 2px 10px #00000003;
   cursor: pointer;
+  position: relative;
 
   &:hover {
     height: 6.3rem;

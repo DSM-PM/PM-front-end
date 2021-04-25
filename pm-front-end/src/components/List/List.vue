@@ -1,7 +1,12 @@
 <template>
   <div class="list-container">
     <p class="list-container-title">{{listInfo.title}}</p>
-    <card v-for="(i) in issueList" :key="i.id" :issueList="i" />
+    <card
+      v-for="(i) in issueList"
+      :key="i.id"
+      :issueList="i"
+      :category="listInfo.title === i.category"
+    />
     <div v-if="isAddCard">
       <add-card
         :boardId="$route.params.id"
@@ -32,6 +37,7 @@ export default {
   },
   created() {
     this.GET_ISSUE({ id: this.$route.params.id });
+    console.log(this.issueList);
   },
   methods: {
     ...mapActions(["GET_ISSUE"])
@@ -63,6 +69,6 @@ export default {
 }
 .add-card-btn:focus,
 .add-card-btn:hover {
-  background-color: rgba(0,0,0, .1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 </style>
