@@ -12,16 +12,20 @@ export default {
     return {
       lists: [
         {
-          title: "BACKLOG"
+          title: "BACKLOG",
+          color: "red"
         },
         {
-          title: "TO DO"
+          title: "TO DO",
+          color: "purple"
         },
         {
-          title: "IN PROGRESS"
+          title: "IN PROGRESS",
+          color: "blue"
         },
         {
-          title: "DONE"
+          title: "DONE",
+          color: "green"
         }
       ]
     };

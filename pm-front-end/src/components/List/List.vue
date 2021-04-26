@@ -1,12 +1,15 @@
 <template>
   <div class="list-container">
-    <p class="list-container-title">{{listInfo.title}}</p>
-    <card
-      v-for="(i) in issueList"
-      :key="i.id"
-      :issueList="i"
-      :category="listInfo.title === i.category"
-    />
+    <draggable>
+      <p class="list-container-title">{{listInfo.title}}</p>
+      <card
+        v-for="(i) in issueList"
+        :key="i.id"
+        :issueList="i"
+        :category="listInfo.title === i.category"
+        :tag="listInfo.color"
+      />
+    </draggable>
     <div v-if="isAddCard">
       <add-card
         :boardId="$route.params.id"
@@ -20,11 +23,12 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
+import draggable from "vuedraggable";
 import CardItem from "../Card/CardItem";
 import AddCard from "../Card/AddCard";
 export default {
   props: ["listInfo"],
-  components: { card: CardItem, "add-card": AddCard },
+  components: { card: CardItem, "add-card": AddCard, draggable },
   data() {
     return {
       isAddCard: true
@@ -37,7 +41,6 @@ export default {
   },
   created() {
     this.GET_ISSUE({ id: this.$route.params.id });
-    console.log(this.issueList);
   },
   methods: {
     ...mapActions(["GET_ISSUE"])
