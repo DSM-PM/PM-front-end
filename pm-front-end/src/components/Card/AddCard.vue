@@ -1,14 +1,10 @@
 <template>
   <div class="add-card">
-    <input
-      type="text"
-      v-model="inputCardTitle"
-      ref="inputCardTitle"
-      @blur="$emit('close')"
-      @keyup.enter="onCreateNewIssue"
-    />
-    <button :disabled="invalidInput" @click="onCreateNewIssue">Add Card</button>
-    <a class="cancel-add-btn" href @click.prevent="$emit('close')">&times;</a>
+    <form @submit="onCreateNewIssue">
+      <input type="text" placeholder="issue contents..." v-model="inputCardTitle" ref="inputCardTitle" @blur="$emit('close')" />
+      <button :disabled="invalidInput">Enter키를 누르세요</button>
+      <a class="cancel-add-btn" href @click.prevent="$emit('close')">&times;</a>
+    </form>
   </div>
 </template>
 
@@ -56,16 +52,12 @@ export default {
     margin-bottom: 1rem;
   }
   button {
-    background-color: rgb(130, 199, 130);
+    background-color: rgb(87, 172, 87);
     color: white;
     padding: 0.5rem;
     border-radius: 0.3rem;
     border: none;
     cursor: pointer;
-    &:hover {
-      transition: 0.3s;
-      background-color: rgb(87, 172, 87);
-    }
   }
 }
 .add-card .cancel-add-btn {
