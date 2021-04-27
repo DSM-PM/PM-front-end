@@ -100,7 +100,6 @@ $gray: #939597;
   }
 
   &-tag {
-    /* background-color: red; */
     height: 100%;
     width: 0.45rem;
     border-radius: 0.6rem 0 0 0.6rem;

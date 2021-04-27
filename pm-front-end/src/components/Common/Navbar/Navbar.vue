@@ -7,14 +7,13 @@
 </template>
 
 <script>
-import { kanban, issue, plus, logout } from "@/assets/img";
+import { kanban, issue, logout } from "@/assets/img";
 export default {
   data() {
     return {
       iconList: [
         { img: kanban, link: "/home" },
         { img: issue, link: "/project" },
-        { img: plus, link: "/d" },
         { img: logout, link: "/" }
       ]
     };
