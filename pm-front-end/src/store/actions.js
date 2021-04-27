@@ -1,7 +1,7 @@
 import { login, signUp } from "../lib/api/user";
 import { createBoard, getBoardList, deleteBoard } from "../lib/api/board";
 import { createProject, getProjectList, deleteProject } from "../lib/api/project";
-import { createIssue, getIssue, deleteIssue } from "../lib/api/issue";
+import { createIssue, getIssue, deleteIssue, updateIssueCategory } from "../lib/api/issue";
 
 export default {
   LOGIN({ commit }, { userId, password }) {
@@ -40,5 +40,8 @@ export default {
   },
   DELETE_ISSUE(_, id) {
     return deleteIssue(id);
+  },
+  UPDATE_ISSUE_CATEGORY(_, { id, category }) {
+    return updateIssueCategory(id, category);
   },
 };

@@ -15,3 +15,7 @@ export const getIssue = (id) => {
 export const deleteIssue = (id) => {
   return getClientAccessToken().delete(`/issue/${id}`);
 };
+
+export const updateIssueCategory = (id, category) => {
+  return getClientAccessToken().put(`/issue/${id}`, { category });
+};
