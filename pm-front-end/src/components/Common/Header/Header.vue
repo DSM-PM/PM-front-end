@@ -17,10 +17,7 @@ export default {};
 </script>
 
 <style lang="scss">
-$yellow: #f5df4d;
-$gray: #939597;
-$font: "AppleSDGothicNeo";
-$titleFont: "Impact";
+@import "../../../assets/style/variables";
 
 header {
   display: flex;
@@ -28,14 +25,14 @@ header {
   align-items: center;
 
   h1 {
-    font-family: $titleFont;
+    font-family: #{$titleFont};
     font-size: 4rem;
     display: flex;
     align-items: baseline;
-    color: $yellow;
+    color: #{$yellow};
     p {
-      color: $gray;
-      font-family: $titleFont;
+      color: #{$gray};
+      font-family: #{$titleFont};
       font-size: 1.4rem;
       margin: 0 0.2rem 0 0.4rem;
     }

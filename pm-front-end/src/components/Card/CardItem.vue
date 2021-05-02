@@ -79,8 +79,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color: #f5df4d;
-$gray: #939597;
+@import "../../assets/style/variables";
 .card {
   display: flex;
   background-color: white;
@@ -111,10 +110,10 @@ $gray: #939597;
 
   &-option-box {
     select {
-      border: 1px solid $color;
+      border: 1px solid #{$yellow};
       padding: 0.15rem;
       border-radius: 0.2rem;
-      color: $gray;
+      color: #{$gray};
       outline: none;
     }
     position: absolute;
@@ -124,12 +123,12 @@ $gray: #939597;
     align-items: center;
     button {
       border: none;
-      background-color: $color;
+      background-color: #{$yellow};
       padding: 0.25rem 0.5rem;
       margin-left: 0.3rem;
       font-size: 0.5rem;
       border-radius: 0.3rem;
-      color: $gray;
+      color: #{$gray};
       cursor: pointer;
     }
   }
