@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color: #f5df4d;
+@import "../../assets/style/mixin";
 .side-container {
   width: 50%;
   height: 100vh;
@@ -23,6 +23,11 @@ $color: #f5df4d;
   justify-content: center;
   img {
     width: 95%;
+  }
+}
+@include mobile {
+  .side-container {
+    display: none;
   }
 }
 </style>

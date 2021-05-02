@@ -21,11 +21,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/style/mixin";
 #app {
   section {
     display: flex;
+    height: 100vh;
     .layout {
       width: 100%;
+    }
+  }
+}
+
+@include mobile {
+  #app {
+    section {
+      height: 100%;
     }
   }
 }

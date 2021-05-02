@@ -1,7 +1,5 @@
-$color: #f5df4d;
-$gray: #939597;
-$font: "AppleSDGothicNeo";
-$titleFont: "Impact";
+@import "./variables";
+@import "./mixin";
 
 .auth-container {
   display: flex;
@@ -14,14 +12,14 @@ $titleFont: "Impact";
   align-items: center;
   text-align: center;
   h1 {
-    font-family: $titleFont;
+    font-family: #{$titleFont};
     font-size: 6rem;
     display: flex;
     align-items: baseline;
-    color: $color;
+    color: #{$yellow};
     p {
-      color: $gray;
-      font-family: $titleFont;
+      color: #{$gray};
+      font-family: #{$titleFont};
       font-size: 2rem;
       margin: 0 0.2rem 0 0.4rem;
     }
@@ -53,7 +51,7 @@ $titleFont: "Impact";
 
   button {
     box-shadow: 0px 3px 6px #00000016;
-    background-color: $color;
+    background-color: #{$yellow};
     width: 100%;
     border-radius: 2rem;
     border: none;
@@ -65,8 +63,15 @@ $titleFont: "Impact";
 
   .link {
     text-decoration: none;
-    color: $gray;
+    color: #{$gray};
     font-size: 0.85rem;
     float: right;
+  }
+}
+
+@include mobile {
+  .auth-container {
+    justify-content: center;
+    height: 100vh;
   }
 }

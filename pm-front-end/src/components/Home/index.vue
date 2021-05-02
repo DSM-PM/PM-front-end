@@ -14,11 +14,13 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../assets/style/mixin";
 $yellow: #fff5b4;
+
 .home-container {
   width: 100%;
   &-title {
-    margin-left : 1.3rem;
+    margin-left: 1.3rem;
     font-size: 1.3rem;
   }
 }
@@ -89,5 +91,18 @@ $yellow: #fff5b4;
   width: inherit;
   color: #888;
   font-weight: 700;
+}
+@include mobile {
+  .board-list {
+    display: block;
+  }
+
+  .board-item {
+    width: 100%;
+  }
+
+  #app section {
+    height: 100%;
+  }
 }
 </style>
