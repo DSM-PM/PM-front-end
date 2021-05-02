@@ -10,6 +10,3 @@ export default {
   components: { kanban: Kanban }
 };
 </script>
-
-<style>
-</style>

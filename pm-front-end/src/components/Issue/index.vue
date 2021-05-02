@@ -10,6 +10,3 @@ export default {
   components: { issue: Issue }
 };
 </script>
-
-<style>
-</style>

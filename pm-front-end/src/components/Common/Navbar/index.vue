@@ -10,6 +10,3 @@ export default {
   components: { Navbar: Navbar }
 };
 </script>
-
-<style>
-</style>
